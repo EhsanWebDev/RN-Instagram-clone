@@ -3,13 +3,11 @@ import { Text, View, StyleSheet, Image } from "react-native";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import Count from "./Count";
 import Button from "./Button";
+import Avatar from "./Avatar";
 const ProfileStats = () => {
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../assets/images/dp.jpg")}
-        style={styles.imgStyle}
-      />
+      <Avatar />
       <View style={styles.statContainer}>
         <View style={{ flexDirection: "row", paddingHorizontal: 20 }}>
           <Count count={(4, 976)} category={"posts"} />
