@@ -1,9 +1,11 @@
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 
-const Avatar = ({ sm }) => {
+const Avatar = ({ sm, md, rounded }) => {
   let styleSM = {};
-  styleSM = sm && { width: 60, height: 60, borderRadius: 30 };
+
+  styleSM = sm && { width: 60, height: 60, borderRadius: rounded && 30 };
+
   return (
     <Image
       source={require("../assets/images/dp.jpg")}

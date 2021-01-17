@@ -1,27 +1,26 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Ionicons, MaterialCommunityIcons, Feather } from "@expo/vector-icons";
-const Header = ({ img }) => {
+import Badge from "../Badge";
+const Header = ({ img, activity }) => {
   if (img) {
     return (
       <View style={styles.img_header_container}>
         <Image source={img} style={styles.header_img} />
         <View>
           <Feather name="message-circle" size={26} color="black" />
-          <View style={styles.badge}>
-            <Text
-              style={{
-                color: "white",
-                fontWeight: "bold",
-                alignSelf: "center",
-                fontSize: 12,
-                flex: 1,
-              }}
-            >
-              2+
-            </Text>
-          </View>
+          <Badge />
         </View>
+      </View>
+    );
+  }
+  if (activity) {
+    return (
+      <View style={[styles.container, { borderBottomColor: "#fff" }]}>
+        <Text style={[styles.headerText, { fontWeight: "bold", fontSize: 26 }]}>
+          Activity
+        </Text>
+        <MaterialCommunityIcons name="dots-horizontal" size={30} color="grey" />
       </View>
     );
   }
@@ -61,19 +60,6 @@ const styles = StyleSheet.create({
     width: 140,
     tintColor: "black",
     resizeMode: "contain",
-  },
-  badge: {
-    position: "absolute",
-    bottom: 16,
-    right: -4,
-    backgroundColor: "red",
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
   },
 });
 export default Header;

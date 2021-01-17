@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
   },
   img_style: {
     width: units.width,
-    height: 360,
+    height: units.height / 2.4,
     resizeMode: "contain",
-    borderRadius: 2,
+    alignSelf: "center",
   },
 });
 
